@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\SQLite.3.13.0\build\net45\SQLite.props" Condition="Exists('..\packages\SQLite.3.13.0\build\net45\SQLite.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DE331C97-23CE-4E0B-BFB1-BEEE86533AB0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ManCity</RootNamespace>
+    <AssemblyName>ManCity</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Sqlite, Version=6.0.5.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Sqlite.Core.6.0.5\lib\netstandard2.0\Microsoft.Data.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core, Version=2.0.6.1341, Culture=neutral, PublicKeyToken=1488e028ca7ab535, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.core.2.0.6\lib\netstandard2.0\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.8.3\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite, Version=1.0.116.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.116.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.116.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.116.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.116.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Categories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Categories.Designer.cs">
+      <DependentUpon>Categories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs" />
+    <Compile Include="Pants.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pants.Designer.cs">
+      <DependentUpon>Pants.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order.Designer.cs">
+      <DependentUpon>Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Toys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Toys.Designer.cs">
+      <DependentUpon>Toys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TShirts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TShirts.Designer.cs">
+      <DependentUpon>TShirts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Jackets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Jackets.Designer.cs">
+      <DependentUpon>Jackets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShoppingBasket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShoppingBasket.Designer.cs">
+      <DependentUpon>ShoppingBasket.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Categories.resx">
+      <DependentUpon>Categories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pants.resx">
+      <DependentUpon>Pants.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order.resx">
+      <DependentUpon>Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Toys.resx">
+      <DependentUpon>Toys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TShirts.resx">
+      <DependentUpon>TShirts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Jackets.resx">
+      <DependentUpon>Jackets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ShoppingBasket.resx">
+      <DependentUpon>ShoppingBasket.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Class.cd" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Mugs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\SpidermanFigure.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Lights.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Test.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\CloseButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Funko Pop Captain America.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Funko Pop Doctor Strange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Funko Pop Spiderman.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Pop Groot.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Captain America Figure.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\AntMan Figure.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Iron man Figure.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\SpiderMan Figure.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\6604651.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Back test.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ShoppingBusket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Add busket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Captain America Light.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Deadpool Light.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Iron Man Light.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\SpiderMan Light.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Captain America Mug.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Mug Marvel Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Hulk Mug.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\SpiderMan Mug.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ShopButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\MarvelBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\bigtoy.png" />
+    <None Include="Resources\jacket211.png" />
+    <None Include="Resources\jacket41.png" />
+    <None Include="Resources\jacket31.png" />
+    <None Include="Resources\jacket5.png" />
+    <None Include="Resources\bigtoy1.png" />
+    <Content Include="Resources\blackpant.png" />
+    <None Include="Resources\stadium1.jpg" />
+    <None Include="Resources\stadium21.jpg" />
+    <None Include="Resources\graypant1.png" />
+    <None Include="Resources\blackpant1.png" />
+    <Content Include="Resources\blue.jpg" />
+    <None Include="Resources\blue1.jpg" />
+    <Content Include="Resources\blue1.png" />
+    <None Include="Resources\bluepant2.png" />
+    <None Include="Resources\blue11.png" />
+    <Content Include="Resources\bluepant.png" />
+    <Content Include="Resources\bluepant1.png" />
+    <Content Include="Resources\clothe1.png" />
+    <Content Include="Resources\clothe11.png" />
+    <None Include="Resources\clothe41.jpg" />
+    <None Include="Resources\clothe31.jpg" />
+    <None Include="Resources\clothe21.jpg" />
+    <None Include="Resources\clothe12.png" />
+    <Content Include="Resources\clothe2.jpg" />
+    <Content Include="Resources\clothe3.jpg" />
+    <Content Include="Resources\clothe4.jpg" />
+    <Content Include="Resources\emvlima.jpg" />
+    <Content Include="Resources\emvlima1.jpg" />
+    <Content Include="Resources\emvlima2.jpg" />
+    <Content Include="Resources\emvlima3.jpg" />
+    <Content Include="Resources\emvlima4.jpg" />
+    <Content Include="Resources\emvlima5.jpg" />
+    <None Include="Resources\toy41.jpg" />
+    <None Include="Resources\toy31.jpg" />
+    <None Include="Resources\toy21.jpg" />
+    <None Include="Resources\toy11.jpg" />
+    <None Include="Resources\emvlima6.jpg" />
+    <Content Include="Resources\graypant.png" />
+    <Content Include="Resources\jacket.png" />
+    <Content Include="Resources\jacket1.png" />
+    <Content Include="Resources\jacket2.png" />
+    <Content Include="Resources\jacket21.png" />
+    <Content Include="Resources\jacket3.png" />
+    <Content Include="Resources\jacket4.png" />
+    <Content Include="Resources\stadium.jpg" />
+    <Content Include="Resources\stadium2.jpg" />
+    <Content Include="Resources\toy1.jpg" />
+    <Content Include="Resources\toy2.jpg" />
+    <Content Include="Resources\toy3.jpg" />
+    <Content Include="Resources\toy4.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\SQLite.3.13.0\build\net45\SQLite.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SQLite.3.13.0\build\net45\SQLite.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+</Project>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MarvelProject.Categories">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIhAAACAAABAAAACAQAwCAAAAAAAAAAAAAIBAAAA=</HashCode>
+      <FileName>Categories.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarvelProject.Customer">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAEAAACAAAEAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarvelProject.Figures">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACIhAAACAAARhAAADAQAwSAAAgAAAAAAAgAQBAAAA=</HashCode>
+      <FileName>Figures.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarvelProject.FunkoPop">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIhAAACAAARgAAACAQAwTAAAgAACAAAAgAQBAAAA=</HashCode>
+      <FileName>FunkoPop.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarvelProject.Mugs">
+    <Position X="10.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIhAAACAAARgAAACAQAwSAAQAAAQAAAAgAQBAgIA=</HashCode>
+      <FileName>Mugs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarvelProject.Lights">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAohAAgCAAARgAAACAQAwSAAAAAAAAAAAgAQBAgAA=</HashCode>
+      <FileName>Lights.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarvelProject.Order">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAIBAAACAQAhAAAACAACBCAAAAAAAAEAAAASRAAAA=</HashCode>
+      <FileName>Order.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarvelProject.ShoppingBasket">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAIAAgACAgARgYAACAAALSAwAAAAAAAAAAAIBAAAQ=</HashCode>
+      <FileName>ShoppingBasket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
