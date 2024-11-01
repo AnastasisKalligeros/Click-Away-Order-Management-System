@@ -12,6 +12,9 @@ The application was implemented in Visual C# visual-parallel programming languag
 4. You will be able to see two available projects, one for the store manager and the other for the customer.
 5. Run them and explore all their functions. </br> </br>
 
+<b>Here are typical screenshots of the functionality:</b> </br> </br>
+
+
 <p align="center"><b>Client Case</b></p> </br> </br>
 
 • <b>Welcome Form</b> </br> </br>
